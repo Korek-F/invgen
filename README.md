@@ -1,5 +1,5 @@
-invgen
-Simple aplication thats creates an nice-looking pdf invitation 
+# INVGEN
+### Simple aplication thats creates an nice-looking pdf invitation 
 
 Steps:
 
@@ -15,4 +15,4 @@ cd InvGen
 python manage.py migrate python manage.py runserver
 ```
 
-enjoy
+**enjoy**
