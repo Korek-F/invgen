@@ -1,0 +1,47 @@
+{% extends 'generator/base.html' %}
+{% block content %}
+<div class="row p-2"> 
+    {% for invitation in object_list %}
+    <div class="col col-md-4 col-sm-12 p-2">
+        <div class="card ">
+            <h5 class="card-header">
+                {%if invitation.p_form%}
+                    From: {{invitation.p_form}} &nbsp; 
+                {%endif%}
+                {%if invitation.p_to %}
+                    To: {{invitation.p_to}} &nbsp; 
+                {%endif%}
+            </h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    {%if invitation.description %}
+                        Content: {{invitation.description}}
+                    {%endif%}
+                </h5>
+                <p class="card-text">
+                    {%if invitation.place %}
+                        Place: {{invitation.place}}<br />
+                    {%endif%}
+                    {%if invitation.invitation_date %}
+                        Date: {{invitation.invitation_date}}<br />
+                    {%endif%}
+                    {%if invitation.template %}
+                        Template: {{invitation.template}}<br />
+                    {%endif%}
+                </p>
+                <a href="{% url 'gen' invitation.id %}" class="btn btn-primary">Inspect</a>
+                <a href="{% url 'invitation_update' invitation.id %}" class="btn btn-primary">Edit</a>
+
+                
+                <form method="post" 
+                action="{% url 'invitation_delete' invitation.id %}
+                ">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

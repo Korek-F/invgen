@@ -1,0 +1,25 @@
+{% extends 'generator/base.html' %}
+{% block content %}
+<div class="row p-2"> 
+    {% for template in object_list %}
+    <div class="col col-md-4 col-sm-12 p-2">
+        <div class="card ">
+            <h5 class="card-header">
+                {{template.title}}
+            </h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Description: {{template.description}}
+                </h5>
+                <p class="card-text">
+                    Date: {{template.create_date}}<br />
+                    Code: <a href={{template.docfile.url}} %}>Click</a>
+                </p>  
+
+            </div>
+             <a href="{% url 'custom_generator' template.id %}" class="btn btn-primary">Use</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

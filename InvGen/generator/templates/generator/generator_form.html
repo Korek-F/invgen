@@ -1,0 +1,14 @@
+{% extends 'generator/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<form method="POST" action="{% url 'generator_form' %}" class="form-control bg-dark"> 
+{% csrf_token %}
+
+ {{form|crispy}}
+
+
+<button type="submit" class="btn btn-primary">Generate</button>
+</form>
+{% endblock %}

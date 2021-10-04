@@ -1,0 +1,13 @@
+{% extends 'generator/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<form method="POST" action="{% url 'invitation_update' invitation.id %}" class="form-control bg-dark"> 
+{% csrf_token %}
+
+ {{form|crispy}}
+
+<button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

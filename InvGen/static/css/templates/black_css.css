@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+@page {
+    size: A4;
+    margin: 0mm 0mm 0mm 0mm;
+}
+body{
+    color:white;
+    font-size: 30px;
+    background: black;
+}
+.dark-theme{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.content{
+    padding:30px;
+}
+.date_place{
+    position: absolute;
+    right:30px;
+    top:30px;
+    font-family: 'Anton', sans-serif;
+}
+.description{
+
+    margin-top:300px;
+    text-align: center;
+}
+.p_from{
+    position: absolute;
+    bottom:300px;
+    right:30px;
+   
+}
+.p_to{
+    position: absolute;
+    left:30px;
+    top:30px;
+    font-family: 'Palette Mosaic', cursive;
+}
+
+div{
+    padding: 20px;
+}

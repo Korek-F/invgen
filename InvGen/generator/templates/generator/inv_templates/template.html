@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InvGen</title>
+   
+  </head>
+  <body>
+   <div class="content">
+        {% if invitation.p_to  %}
+            <div class="p_to dark-theme">
+                Hi {{invitation.p_to}}!<br />
+            </div>
+        {% endif%}
+
+        {% if invitation.place or invitation.invitation_date%}
+            <div class="date_place dark-theme"> 
+                {% if invitation.place  %}
+                    Place: {{invitation.place}}<br /> 
+                {% endif%}
+
+                {% if invitation.invitation_date  %}
+                    Date: {{invitation.invitation_date}}<br />  
+                {% endif%}
+            </div>
+        {% endif%}
+
+        <div class="description dark-theme"> 
+            {{invitation.description}}<br />
+        </div> 
+
+        {% if invitation.p_from  %}
+            <div class="p_from dark-theme"> 
+                From {{invitation.p_from}} 
+            </div> 
+         {% endif%}
+    </div>
+  </body>
+</html>
+
+
+
+
+
